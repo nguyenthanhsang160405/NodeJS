@@ -1,25 +1,24 @@
-const express = require('express')
-// const { hostname } = require('os')
-const path = require('path')
 require('dotenv').config()
+const express = require('express')
+const configViewEngine = require('./config/viewEngine');
+const webRoutes = require('./routes/web');
+const mysql = require('mysql2')
+
+// const apiRoutes = require('./routes/api');
+
 const app = express()
 const port = process.env.PORT || 8000
-// const hostname = 'localhost'
 
-console.log(process.env)
+//config template engine
+configViewEngine(app) 
 
-app.set('view engine','ejs')
-app.set('views',path.join( __dirname ,'view'))
+//khai báo route
+app.use('/',webRoutes);
+// app.use('/api',apiRoutes);
 
-
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
-app.get('/h1', (req, res) => {
-  res.send('<h1>Nguyễn Thanh Sang<h1>')
-})
 
 app.listen(port,() => {
   console.log(`Example app listening on port ${port}`)
 })
+
+

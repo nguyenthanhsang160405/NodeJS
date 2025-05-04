@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="add-user" href="/">Home</a>
+        <a href="/show-user">List Users</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <div class="form">
+        <form action="/add-user" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Form Edit User</legend>
+                <div class="input-group">
+                    <label for="">Email</label>
+                    <input type="text" name="email" id="">
+                </div>
+                <div class="input-group">
+                    <label for="">Name</label>
+                    <input type="text" name="name" id="">
+                </div>
+                <div class="input-group">
+                    <label for="">City</label>
+                    <input type="text" name="city" id="">
+                </div>
+                <div class="input-group">
+                    <label for="">Avatar</label>
+                    <input type="file" name="avatar" id="" multiple>
+                </div>
+                <div>
+                    <input type="submit" value="Add">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
